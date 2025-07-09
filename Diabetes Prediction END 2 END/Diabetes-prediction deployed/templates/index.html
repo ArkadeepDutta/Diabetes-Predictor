@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Predictor</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Diabetes Predictor</h1>
+
+  <div class="login">
+    <form action="{{ url_for('predict')}}" method="post">
+      <input class="form-input" type="text" name="pregnancies" placeholder="Number of Pregnancies e.g. 0"><br>
+      <input class="form-input" type="text" name="glucose" placeholder="Glucose (mg/dL) e.g. 80"><br>
+      <input class="form-input" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) e.g. 80"><br>
+      <input class="form-input" type="text" name="skinthickness" placeholder="Skin Thickness (mm) e.g. 20"><br>
+      <input class="form-input" type="text" name="insulin" placeholder="Insulin Level (IU/mL) e.g. 80"><br>
+      <input class="form-input" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) e.g. 23.1"><br>
+      <input class="form-input" type="text" name="dpf" placeholder="Diabetes Pedigree Function e.g. 0.52"><br>
+      <input class="form-input" type="text" name="age" placeholder="Age (years) e.g. 34"><br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br><br>
+    {{ prediction_text }}
+  </div>
+
+  <footer>By Arkadeep Dutta</footer>
+</body>
+</html>
+

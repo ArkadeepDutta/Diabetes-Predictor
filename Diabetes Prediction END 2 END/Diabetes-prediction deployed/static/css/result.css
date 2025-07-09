@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  width: 100%;
+  min-height: 100vh;        /* ensures full‑screen */
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1.2px;
+
+  /* shared background behaviour */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;            /* centers the results div */
+  justify-content: center;
+  align-items: center;
+}
+
+body.has-diabetes   { background-image: url("../yesdiabetesbg.png"); }
+body.no-diabetes    { background-image: url("../NoDiabetesbg.png");  }
+
+.results {
+  max-width: 800px;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.5);  /* translucent box for readability */
+  border-radius: 12px;
+}
+
+.danger { color: #ff4c4c; font-weight: bold; }
+.safe   { color: #4caf50; font-weight: bold; }
+

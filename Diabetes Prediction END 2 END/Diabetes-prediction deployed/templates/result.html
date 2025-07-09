@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Predictor</title>
+
+  <!-- Link to the external stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+
+<!--
+  We assign a body‑level class based on the prediction.
+  This lets CSS pick the correct background image.
+-->
+<body class="{% if prediction == 1 %}has-diabetes{% else %}no-diabetes{% endif %}">
+
+  <div class="results">
+    {% if prediction == 1 %}
+      <h1>Prediction:
+        <span class="danger">Oops! You have DIABETES.</span>
+      </h1>
+    {% elif prediction == 0 %}
+      <h1>Prediction:
+        <span class="safe">Hurrah !!! You DON'T have diabetes.</span>
+      </h1>
+    {% endif %}
+  </div>
+
+</body>
+</html>
